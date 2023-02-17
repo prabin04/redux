@@ -27,4 +27,8 @@ const reducer = (state = initialState, action) => {
     }
 }
 
-const store = createStore(reducer)
+const store = (state = initialState, action) => {
+     switch(action.type) {
+        case CAKE_ORDERED
+     }
+}
