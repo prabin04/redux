@@ -3,7 +3,6 @@ import './App.css';
 
 const ACTIONS = {
   ADD_TODO: 'add-todo'
-  NEW_TODO: 'new-todo'
 }
 
 function reducer(state, action){
@@ -24,7 +23,7 @@ function App() {
 
   function handleSubmit(){
     e.preventDefault()
-    dispatch({type: ACTIONS.ADD_TODO})
+    dispatch({type: ACTIONS.ADD_TODO, payload: {} })
     setName('')
   }
 
