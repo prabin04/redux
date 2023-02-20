@@ -14,11 +14,11 @@ function App() {
   }
 
   return (
-    <>
+    <div class="App">
       <button onClick={increment}>+</button>
         <span>{count}</span>
       <button onClick={decrement}>-</button>
-    </>
+    </div>
   );
 }
 
