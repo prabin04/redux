@@ -5,11 +5,13 @@ const ACTIONS = {
   ADD_TODO: 'add-todo'
 }
 
-function reducer(state, action){
-  switch (action.type)
-    case ACTIONS.ADD_TODO:
-      return [...todos, newTodo(name)]
-
+function reducer(todos, action){
+  switch (action.type) {
+      case ACTIONS.ADD_TODO:
+      return [...todos, newTodo(action.payload.name)]
+    }
+    default:
+      return todos;
 }
 
 function newTodo(name){
@@ -21,9 +23,9 @@ function App() {
   const [todos, dispatch] = useReducer(reducer, []);
   const [name, setName] = useState('');
 
-  function handleSubmit(){
+  function handleSubmit(e){
     e.preventDefault()
-    dispatch({type: ACTIONS.ADD_TODO, payload: {} })
+    dispatch({type: ACTIONS.ADD_TODO, payload: {name: name} })
     setName('')
   }
 
